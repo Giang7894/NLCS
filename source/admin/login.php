@@ -44,7 +44,6 @@
                       <div class="form-floating mx-5 mb-3">
                         <input type="password" class="form-control" name="password" placeholder="Password" aria-labelledby="passwordHelpBlock" id="floatingPassword">
                         <label for="floatingPassword">Mật khẩu</label>
-
                       </div>
                       <div class="d-grid d-md-block">
                         <button class="ad btn btn-primary col-6 ms-5" type="submit" name="submit">Đăng nhập</button>
