@@ -96,3 +96,6 @@ CREATE TABLE `recipes`.`danh_gia` (
   
   ALTER TABLE `recipes`.`cong_thuc` 
 ADD COLUMN `hinh_anh` LONGTEXT NOT NULL AFTER `ma_loai`;
+
+  ALTER TABLE `recipes`.`binh_luan` 
+ADD COLUMN `an` INT NOT NULL ;
