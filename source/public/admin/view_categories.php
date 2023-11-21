@@ -20,7 +20,7 @@ require_once __DIR__ . '/isadmin.php';
                     <tr>
                         <th>Mã danh mục</th>
                         <th>Tên danh mục</th>
-                        <th>Số công thức<th>
+                        <th>Số công thức</th>
                         <th>Sửa</th>
                         <th>Xóa</th>
                     </tr>
@@ -29,9 +29,9 @@ require_once __DIR__ . '/isadmin.php';
                     <?php
                      if(isset($_GET['search']) && !empty($_GET['search'])){
                         $search=$_GET['search'];
-                        $query="SELECT a.*,count(b.ma_ct) as tong FROM danh_muc as a join cong_thuc as b  where a.ma_loai=b.ma_loai and  a.ten_loai like '%$search%' group by a.ma_loai";
+                        $query="SELECT a.*,count(b.ma_ct) as tong FROM danh_muc as a lef outer join cong_thuc as b  on a.ma_loai=b.ma_loai where   a.ten_loai like '%$search%' group by a.ma_loai";
                      }
-                    else{$query='SELECT a.*,count(b.ma_ct) FROM danh_muc as a join cong_thuc as b  where a.ma_loai=b.ma_loai group by a.ma_loai';}
+                    else{$query='SELECT a.*,count(b.ma_ct) as tong FROM danh_muc as a left outer join cong_thuc as b  on a.ma_loai=b.ma_loai group by a.ma_loai';}
                     $stament=mysqli_query($connect,$query);
                     $count=mysqli_num_rows($stament);
                     if($count==0) echo'<tr><td colspan="5" class="text-center">Không có danh mục nào<td></tr>';

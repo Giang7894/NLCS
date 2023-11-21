@@ -5,9 +5,9 @@ require_once __DIR__ . '/isadmin.php';
 
 if(isset($_POST['submit'])){
 
-    $ten=$_POST['ten'];
+    $name=$_POST['ten'];
 
-    $query1="INSERT INTO danh_muc(ten_loai) values ('$ten')";
+    $query1="INSERT INTO danh_muc(ten_loai) values ('$name')";
     $query="SELECT ma_loai from danh_muc where ten_loai='$name'";
     $result=mysqli_query($connect, $query);
     $row=mysqli_fetch_array($result);

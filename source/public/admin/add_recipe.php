@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     $tool=mysqli_real_escape_string($connect,$_POST['tool']);
     $ingredient=mysqli_real_escape_string($connect,$_POST['ingr']);
     $steps=mysqli_real_escape_string($connect,$_POST['step']);
-    $query1="INSERT INTO congthuc(ten_ct,mo_ta,dung_cu,nguyen_lieu,buoc,hinh_anh,ma_loai) values('$name','$descrb','$tool','$ingredient','$steps','$img','$cate')";
+    $query1="INSERT INTO cong_thuc(ten_ct,mo_ta,dung_cu,nguyen_lieu,buoc,hinh_anh,ma_loai) values('$name','$descrb','$tool','$ingredient','$steps','$img','$cate')";
     $query="SELECT ma_ct from cong_thuc where ten_ct='$name'";
     $result=mysqli_query($connect, $query);
     $row=mysqli_fetch_array($result);

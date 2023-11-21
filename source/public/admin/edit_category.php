@@ -11,8 +11,8 @@ if(isset($_POST['id']) && is_numeric($_POST['id']) && $_POST['id']>0){
     $query1="UPDATE danh_muc set ten_loai='$_POST[name]' where ma_loai='$_POST[id]'";
 
     mysqli_query($connect, $query1); 
-    mysqli_query($connect, $query2); 
-    header('location:view.php');
+
+    header('location:view_categories.php');
 }
 
 if(isset($_GET['ma_loai']) && is_numeric($_GET['ma_loai']) && ($_GET['ma_loai']>0)){
@@ -45,7 +45,7 @@ if(isset($_GET['ma_loai']) && is_numeric($_GET['ma_loai']) && ($_GET['ma_loai']>
         <main class="container"> 
             <h1>Chỉnh sửa công thức</h1>
             <form method="post" enctype="application/x-www-form-urlencoded" >
-            <?php echo'<input type="hidden" name="id" value='.$_GET['id'].'>' ?>
+            <?php echo'<input type="hidden" name="id" value='.$_GET['ma_loai'].'>' ?>
 
                 <div class="form-group">
                     <label for="name">Tên công thức</label>
