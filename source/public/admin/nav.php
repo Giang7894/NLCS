@@ -14,14 +14,14 @@
                             <a class="nav-link" href="view_user.php">USER</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="comment.php">COMMENT</a>
+                            <a class="nav-link" href="view_comment.php">COMMENT</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 ACTION
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="add.php">ADD RECIPES</a></li>
+                                <li><a class="dropdown-item" href="add_recipe.php">ADD RECIPES</a></li>
                                 <li><a class="dropdown-item" href="view_recipes.php">VIEW RECIPES</a></li>
                             </ul>
                         </li>

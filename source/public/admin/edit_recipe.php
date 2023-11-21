@@ -2,21 +2,18 @@
 
 require_once __DIR__ . '/isadmin.php';
 
-require_once __DIR__ . '/../../db/db_connection.php';
+
 
 if(isset($_POST['id']) && is_numeric($_POST['id']) && $_POST['id']>0){
     $name=$_POST['name'];
-    $time=$_POST['time'];
-    $serve=$_POST['serve'];
-    $diff=$_POST['diff'];
     $img=$_POST['img'];
     $descrb=$_POST['descrb'];
     $tool=$_POST['tool'];
     $ingredient=$_POST['ingr'];
     $steps=$_POST['step'];
+    $cate=$_POST['cate'];
 
-    $query1="UPDATE congthuc set tenmonan='$name',thoigianchuanbi='$time',soluongnguoian='$serve',dokho='$diff',hinhanh='$img',mota='$descrb' where macongthuc='$_POST[id]'";
-    $query2="UPDATE chitiet set dungcu='$tool',nguyenlieu='$ingredient',buoc='$steps' where macongthuc='$_POST[id]'";
+    $query1="UPDATE cong_thuc set ten_ct='$name',hinh_anh='$img',mo_ta='$descrb',ma_loai='$cate' where ma_ct='$_POST[id]'";
 
     mysqli_query($connect, $query1); 
     mysqli_query($connect, $query2); 
@@ -24,22 +21,20 @@ if(isset($_POST['id']) && is_numeric($_POST['id']) && $_POST['id']>0){
 }
 
 if(isset($_GET['id']) && is_numeric($_GET['id']) && ($_GET['id']>0)){
-    $query="SELECT * FROM congthuc as a join chitiet as b WHERE a.macongthuc=b.macongthuc and a.macongthuc='$_GET[id]'";
+    $query="SELECT * FROM cong_thuc where ma_ct='$_GET[id]'";
 
     $stament=mysqli_query($connect, $query);
 
 
     $row=mysqli_fetch_array($stament);
     if(!empty($row)){
-        $name=$row['tenmonan'];
-        $time=$row['thoigianchuanbi'];
-        $serve=$row['soluongnguoian'];
-        $diff=$row['dokho'];
-        $img=$row['hinhanh'];
-        $descrb=$row['mota'];
-        $tool=$row['dungcu'];
-        $ingredient=$row['nguyenlieu'];
+        $name=$row['ten_ct'];
+        $img=$row['hinh_anh'];
+        $descrb=$row['mo_ta'];
+        $tool=$row['dung_cu'];
+        $ingredient=$row['nguyen_lieu'];
         $steps=$row['buoc'];
+        $category=$row['ma_loai'];
     }else{
         $erorro_message='Khong the lay du lieu';
     }
@@ -58,31 +53,24 @@ if(isset($_GET['id']) && is_numeric($_GET['id']) && ($_GET['id']>0)){
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
         <main class="container"> 
-            <h1>Chinh sua cong thuc</h1>
+            <h1>Chỉnh sửa công thức</h1>
             <form method="post" enctype="application/x-www-form-urlencoded" >
             <?php echo'<input type="hidden" name="id" value='.$_GET['id'].'>' ?>
                 <div class="form-group">
-                    <label for="name">Tên món ăn</label>
+                    <label for="name">Danh mục</label>
+                    <select name="cate">
+                        <?php $sql="SELECT * from danh_muc";
+                                $ca=mysqli_query($connect,$sql);
+                                while($cat=mysqli_fetch_array($ca)){
+                                    if ($category==$cat['ma_loai']) $se='selected'; else $se='';
+                                    echo '<option value="'.$cat['ma_loai'].'" '.$se.'>'.$cat['ten_loai'].'</option>';
+                                } ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Tên công thức</label>
                     <?php 
                         echo '<input type="text" class="form-control" id="name" name="name" value='.$name.'>';
-                    ?>
-                </div>
-                <div class="form-group">
-                    <label for="time">Thời gian chuẩn bị</label>
-                    <?php 
-                        echo '<input type="text" class="form-control" id="time" name="time" value='.$time.'>';
-                    ?>
-                </div>
-                <div class="form-group">
-                    <label for="serve">Số người ăn</label>
-                    <?php 
-                        echo '<input type="text" class="form-control" id="serve" name="serve" value='.$serve.'>';
-                    ?>
-                </div>
-                <div class="form-group">
-                    <label for="diff">Độ khó</label>
-                    <?php 
-                        echo '<input type="text" class="form-control" id="diff" name="diff" value='.$diff.'>';
                     ?>
                 </div>
                 <div class="form-group">

@@ -2,22 +2,21 @@
 
 require_once __DIR__ . '/isadmin.php';
 
-require_once __DIR__ . '/../../db/db_connection.php';
+
 
 if(isset($_POST['submit'])){
     $name=$_POST['name'];
-    $time=$_POST['time'];
-    $serve=$_POST['serve'];
     $img=$_POST['img'];
     $descrb=$_POST['descrb'];
+    $cate=$_POST['cate'];
     $tool=mysqli_real_escape_string($connect,$_POST['tool']);
     $ingredient=mysqli_real_escape_string($connect,$_POST['ingr']);
     $steps=mysqli_real_escape_string($connect,$_POST['step']);
-    $query1="INSERT INTO congthuc(tencongthuc,thoigianchuanbi,soluongnguoian,hinhanh,mota,dungcu,nguyenlieu,buoc) values('$name','$time','$serve','$img','$descrb','$tool','$ingredient','$steps')";
-    $query="SELECT macongthuc from congthuc where tencongthuc='$name'";
+    $query1="INSERT INTO congthuc(ten_ct,mo_ta,dung_cu,nguyen_lieu,buoc,hinh_anh,ma_loai) values('$name','$descrb','$tool','$ingredient','$steps','$img','$cate')";
+    $query="SELECT ma_ct from cong_thuc where ten_ct='$name'";
     $result=mysqli_query($connect, $query);
     $row=mysqli_fetch_array($result);
-     if(empty($row['macongthuc'])){
+     if(empty($row['ma_ct'])){
         mysqli_query($connect, $query1); 
     }else{
         $error="Đã tồn tại công thức";
@@ -38,27 +37,23 @@ if(isset($_POST['submit'])){
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
         <main class="container"> 
-            <h1>Them cong thuc moi</h1>
+            <h1>Thêm một công thức mới</h1>
             <form method="post" enctype="application/x-www-form-urlencoded" class="needs-validation" novalidate>
+            <div class="form-group">
+                    <label for="name">Danh mục</label>
+                    <select name="cate">
+                        <?php $sql="SELECT * from danh_muc";
+                                $ca=mysqli_query($connect,$sql);
+                                while($cat=mysqli_fetch_array($ca)){
+                                    echo '<option value="'.$cat['ma_loai'].'">'.$cat['ten_loai'].'</option>';
+                                } ?>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="name">Tên món ăn</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="" required pattern=".{,20}">
                     <div class="invalid-feedback">
                         Vui lòng nhập tên công thức.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="time">Thời gian chuẩn bị</label>
-                    <input type="text" class="form-control" id="time" name="time" placeholder="" required >
-                    <div class="invalid-feedback">
-                        Vui lòng nhập thời gian chuẩn bị.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="serve">Số người ăn</label>
-                    <input type="text" class="form-control" id="serve" name="serve" placeholder="" required >
-                    <div class="invalid-feedback">
-                        Vui lòng nhập số người ăn.
                     </div>
                 </div>
                 <div class="form-group">

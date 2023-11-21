@@ -2,7 +2,6 @@
 
 require_once __DIR__ . '/isadmin.php';
 
- require_once __DIR__ . '/../../db/db_connection.php';
 
 
  ?>
@@ -16,7 +15,7 @@ require_once __DIR__ . '/isadmin.php';
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
         <form class="d-flex" method="GET" action="#">
-      <input class="form-control me-2" type="search" placeholder="Tìm kiếm một tài khoản hoặc một người dùng nào đó" aria-label="Search" name="search" value="<?php if(isset($_GET['search'])) echo''.$_GET['search'].''; ?>">
+      <input class="form-control me-2" type="search" placeholder="Tìm kiếm một tài khoản nào đó" aria-label="Search" name="search" value="<?php if(isset($_GET['search'])) echo''.$_GET['search'].''; ?>">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
         <main class="container">  
@@ -28,6 +27,7 @@ require_once __DIR__ . '/isadmin.php';
                         <th>Họ tên người dùng</th>
                         <th>Số điện thoại</th>
                         <th>Email</th>
+                        <th>Xóa</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,9 +39,10 @@ require_once __DIR__ . '/isadmin.php';
                     else{$query='SELECT a.ten_tk,b.ten_nguoi_dung,b.sdt,b.email  FROM tai_khoan as a left outer join chi_tiet_tk as b on a.id=b.id ';}
                     $stament=mysqli_query($connect,$query);
                     $count=mysqli_num_rows($stament);
-                    if($count==0) echo'<tr><td colspan="4" class="text-center">Không có người dùng nào<td></tr>';
+                    if($count==0) echo'<tr><td colspan="5" class="text-center">Không có người dùng nào<td></tr>';
                     else{
                     while($row=mysqli_fetch_array($stament)){
+                        $id=$row['id'];
                         $username=$row['ten_tk'];
                         $name=$row['ten_nguoi_dung'];
                         if(is_null($name)) $name="Chưa điền thông tin";
@@ -54,6 +55,7 @@ require_once __DIR__ . '/isadmin.php';
                             <td>'.$name.'</td>
                             <td>'.$phone.'</td>
                             <td>'.$email.'</td>
+                            <td><a type="button" class="btn btn-danger" href="delete_user.php?id='.$id.'">Xóa</a></td>
                         </tr>';
                     }}
                     ?>
