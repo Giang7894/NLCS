@@ -1,5 +1,5 @@
 <?php
-  require_once __DIR__ . '/../db/db_connection.php';
+  require_once __DIR__ . '/../../db/db_connection.php';
   session_start();
   if(isset($_SESSION['id'])){
     header('location:index.php');
@@ -26,7 +26,7 @@
 <html>
     <head>
     <link href="css/login.css" rel="stylesheet">
-    <?php require_once __DIR__ . '/../framework.php'; ?>
+    <?php require_once __DIR__ . '/../../framework.php'; ?>
     </head>
     <body>
         <main>
