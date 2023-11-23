@@ -69,19 +69,19 @@ require_once __DIR__ . '/isadmin.php';
                       
                             <!-- Modal Header -->
                             <div class=\"modal-header\">
-                              <h4 class=\"modal-title\">Modal Heading</h4>
+                              <h4 class=\"modal-title\">Xóa công thức</h4>
                               <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\"></button>
                             </div>
                       
                             <!-- Modal body -->
                             <div class=\"modal-body\">
-                              Ban co that su muon xoa
+                              Bạn có thật sự muốn xóa công thức này
                             </div>
                       
                             <!-- Modal footer -->
                             <div class=\"modal-footer\">
-                            <a href=\"delete_recipe.php?id=$id\" class=\"btn btn-danger\" role=\"button\" >Xoa</a>
-                              <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Dong</button>
+                            <a href=\"delete_recipe.php?id=$id\" class=\"btn btn-danger\" role=\"button\" >Xóa</a>
+                              <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Đóng</button>
                             </div>
                       
                           </div>

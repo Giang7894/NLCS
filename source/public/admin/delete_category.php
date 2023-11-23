@@ -7,7 +7,7 @@ if(isset($_GET['ma_loai'])){
     $r=mysqli_query($connect,$query);
     $row=mysqli_fetch_array($r);
     if($row['dem']!=0){
-        $_SESSION['error']="Vui lòng thay đổi danh mục của tất cả công thức thuộc danh mục này trước khi xóa";
+        $_SESSION['msg']="Vui lòng thay đổi danh mục của tất cả công thức thuộc danh mục này trước khi xóa";
     }else{
         $query="DELETE FROM danh_muc where ma_loai='$_GET[ma_loai]'";
         $r=mysqli_query($connect,$query);
