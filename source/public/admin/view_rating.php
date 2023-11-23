@@ -18,8 +18,8 @@
       <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
         <main class="container">  
-            <h1>COMMENT</h1>
-            <table class="table table-hover">
+            <h1 class="text-center">ĐÁNH GIÁ</h1>
+            <table class="table table-hover table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>Tên tài khoản</th>
@@ -36,7 +36,7 @@
                     {$query='SELECT a.*,b.ten_tk,c.ten_ct   FROM danh_gia as a  join cong_thuc as c  join tai_khoan as b where a.id=b.id  and a.ma_ct=c.ma_ct';}
                     $stament=mysqli_query($connect,$query);
                     $count=mysqli_num_rows($stament);
-                    if($count==0) echo'<tr><td colspan="4" class="text-center">Không có bình luận nào<td></tr>';
+                    if($count==0) echo'<tr><td colspan="3" class="text-center">Không có bình luận nào</td></tr>';
                     else{
                     while($row=mysqli_fetch_array($stament)){
                         $username=$row['ten_tk'];

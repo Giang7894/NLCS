@@ -16,8 +16,8 @@ if(isset($_POST['id']) && is_numeric($_POST['id']) && $_POST['id']>0){
     $query1="UPDATE cong_thuc set ten_ct='$name',hinh_anh='$img',mo_ta='$descrb',ma_loai='$cate' where ma_ct='$_POST[id]'";
 
     mysqli_query($connect, $query1); 
-    mysqli_query($connect, $query2); 
-    header('location:view.php');
+    $_SESSION['msg']="Sửa thành công";
+    header('location:view_recipe_detail.php?ma_ct='.$_POST['id'].'');
 }
 
 if(isset($_GET['id']) && is_numeric($_GET['id']) && ($_GET['id']>0)){
@@ -36,7 +36,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id']) && ($_GET['id']>0)){
         $steps=$row['buoc'];
         $category=$row['ma_loai'];
     }else{
-        $erorro_message='Khong the lay du lieu';
+        $erorr_message='Khong the lay du lieu';
     }
 }
 
@@ -53,7 +53,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id']) && ($_GET['id']>0)){
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
         <main class="container"> 
-            <h1>Chỉnh sửa công thức</h1>
+            <h1 class="text-center">Chỉnh sửa công thức</h1>
             <form method="post" enctype="application/x-www-form-urlencoded" >
             <?php echo'<input type="hidden" name="id" value='.$_GET['id'].'>' ?>
                 <div class="form-group">

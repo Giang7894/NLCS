@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <header>
-  <!-- Sidebar -->
   <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
     <div class="position-sticky">
       <div class="list-group list-group-flush mx-3 mt-4">
-        <!-- Collapse 1 -->
+      <a
+          class="list-group-item list-group-item-action py-2 ripple"
+          aria-current="true"
+          href="index.php"
+          aria-expanded="true"
+        >
+        <i class="fa fa-home me-3" aria-hidden="true"></i><span>Trang chủ</span>
+        </a>
         <a
           class="list-group-item list-group-item-action py-2 ripple"
           aria-current="true"
@@ -13,26 +19,19 @@
           aria-expanded="true"
           aria-controls="collapseExample1"
         >
-          <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Expanded menu</span>
+        <i class="fa fa-list-alt me-3" aria-hidden="true"></i><span>Danh mục</span>
         </a>
-        <!-- Collapsed content -->
-        <ul id="collapseExample1" class="collapse show list-group list-group-flush">
-          <li class="list-group-item py-1">
-            <a href="" class="text-reset">Link</a>
+
+        <ul id="collapseExample1" class="collapse list-group list-group-flush">
+          <li class="list-group-item py-1 ps-4">
+            <a href="add_category.php" class="text-reset">Thêm mới</a>
           </li>
-          <li class="list-group-item py-1">
-            <a href="" class="text-reset">Link</a>
-          </li>
-          <li class="list-group-item py-1">
-            <a href="" class="text-reset">Link</a>
-          </li>
-          <li class="list-group-item py-1">
-            <a href="" class="text-reset">Link</a>
+          <li class="list-group-item py-1 ps-4">
+            <a href="view_categories.php" class="text-reset">Xem thông tin</a>
           </li>
         </ul>
-        <!-- Collapse 1 -->
 
-        <!-- Collapse 2 -->
+
         <a
           class="list-group-item list-group-item-action py-2 ripple"
           aria-current="true"
@@ -41,34 +40,58 @@
           aria-expanded="true"
           aria-controls="collapseExample2"
         >
-          <i class="fas fa-chart-area fa-fw me-3"></i><span>Collapsed menu</span>
+        <i class="fa-solid fa-book me-3"></i><span>Công thức</span>
         </a>
-        <!-- Collapsed content -->
+
         <ul id="collapseExample2" class="collapse list-group list-group-flush">
-          <li class="list-group-item py-1">
-            <a href="" class="text-reset">Link</a>
+          <li class="list-group-item py-1 ps-4">
+            <a href="add_recipe.php" class="text-reset">Thêm mới</a>
           </li>
-          <li class="list-group-item py-1">
-            <a href="" class="text-reset">Link</a>
-          </li>
-          <li class="list-group-item py-1">
-            <a href="" class="text-reset">Link</a>
-          </li>
-          <li class="list-group-item py-1">
-            <a href="" class="text-reset">Link</a>
+          <li class="list-group-item py-1 ps-4">
+            <a href="view_recipes.php" class="text-reset">Xem thông tin</a>
           </li>
         </ul>
-        <!-- Collapse 2 -->
+
+        <a
+          class="list-group-item list-group-item-action py-2 ripple"
+          aria-current="true"
+          href="view_user.php"
+          aria-expanded="true"
+        >
+        <i class="fa-solid fa-user me-3"></i><span>Người dùng</span>
+        </a>
+
+
+        <a
+          class="list-group-item list-group-item-action py-2 ripple"
+          aria-current="true"
+          href="view_comment.php"
+          aria-expanded="true"
+        >
+        <i class="fa-solid fa-comment me-3"></i><span>Bình luận</span>
+        </a>
+
+
+        <a
+          class="list-group-item list-group-item-action py-2 ripple"
+          aria-current="true"
+          href="view_rating.php"
+          aria-expanded="true"
+        >
+        <i class="fas fa-star me-3"></i>Đánh giá</span>
+        </a>
+
       </div>
     </div>
-  </nav>
-  <!-- Sidebar -->
 
-  <!-- Navbar -->
+
+
   <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-    <!-- Container wrapper -->
+
+
     <div class="container-fluid">
-      <!-- Toggle button -->
+
+
       <button
         class="navbar-toggler"
         type="button"
@@ -81,20 +104,20 @@
         <i class="fas fa-bars"></i>
       </button>
 
-      <!-- Brand -->
-      <a class="navbar-brand" href="#">
+
+      <a class="navbar-brand" href="index.php">
         <img
           src="/../img/logo.jpg"
-          height="25"
-          alt="MDB Logo"
+          height="70"
+          alt="Let me cook Logo"
           loading="lazy"
         />
       </a>
-      <!-- Search form -->
 
-      <!-- Right links -->
+
+
       <ul class="navbar-nav ms-auto d-flex flex-row">
-        <!-- Avatar -->
+
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
@@ -110,40 +133,46 @@
               height="22"
               alt="Avatar"
               loading="lazy"
-            />
+            />admin01
           </a>
           <ul
             class="dropdown-menu dropdown-menu-end"
             aria-labelledby="navbarDropdownMenuLink"
           >
-            <li><a class="dropdown-item" href="#">Logout</a></li>
+            <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
           </ul>
         </li>
       </ul>
     </div>
-    <!-- Container wrapper -->
+
   </nav>
-  <!-- Navbar -->
-</header>
- <style>
+  <style>
+    li:hover{
+      background: #8CC7E9;
+    }
+  main{
+    padding-left: 120px !important;
+    padding-top: 100px;
+  }
     body {
   background-color: #fbfbfb;
 }
 @media (min-width: 991.98px) {
   main {
-    padding-left: 240px;
+    padding-left: 120px;
+    padding-top: 100px;
   }
 }
 
-/* Sidebar */
+
 .sidebar {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
-  padding: 58px 0 0; /* Height of navbar */
+  padding: 70px 0 0; 
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
-  width: 240px;
+  width: 190px;
   z-index: 600;
 }
 
@@ -163,9 +192,14 @@
   height: calc(100vh - 48px);
   padding-top: 0.5rem;
   overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  overflow-y: auto; 
 }
  </style>
+ <script>
+    console.log(location.href);
+ </script>
+</header>
+
 
 
 

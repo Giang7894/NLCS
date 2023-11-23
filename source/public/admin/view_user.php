@@ -19,8 +19,8 @@ require_once __DIR__ . '/isadmin.php';
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
         <main class="container">  
-            <h1>USER</h1>
-            <table class="table table-hover">
+            <h1 class="text-center">NGƯỜI DÙNG</h1>
+            <table class="table table-hover table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>Tên tài khoản</th>
@@ -39,7 +39,7 @@ require_once __DIR__ . '/isadmin.php';
                     else{$query='SELECT a.ten_tk,b.ten_nguoi_dung,b.sdt,b.email  FROM tai_khoan as a left outer join chi_tiet_tk as b on a.id=b.id ';}
                     $stament=mysqli_query($connect,$query);
                     $count=mysqli_num_rows($stament);
-                    if($count==0) echo'<tr><td colspan="5" class="text-center">Không có người dùng nào<td></tr>';
+                    if($count==0) echo'<tr><td colspan="5" class="text-center">Không có người dùng nào</td></tr>';
                     else{
                     while($row=mysqli_fetch_array($stament)){
                         $id=$row['id'];
@@ -55,7 +55,7 @@ require_once __DIR__ . '/isadmin.php';
                             <td>'.$name.'</td>
                             <td>'.$phone.'</td>
                             <td>'.$email.'</td>
-                            <td><a type="button" class="btn btn-danger" href="delete_user.php?id='.$id.'">Xóa</a></td>
+                            <td><a type="button" class="btn btn-danger" href="delete_user.php?id='.$id.'"><i class="fa-solid fa-trash pe-1" style="color: #ffffff;"></i>Xóa</a></td>
                         </tr>';
                     }}
                     ?>

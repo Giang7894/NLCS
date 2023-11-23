@@ -17,7 +17,9 @@ if(isset($_POST['submit'])){
     $result=mysqli_query($connect, $query);
     $row=mysqli_fetch_array($result);
      if(empty($row['ma_ct'])){
-        mysqli_query($connect, $query1); 
+        mysqli_query($connect, $query1);
+        header('location:view_recipes.php');
+        $_SESSION['msg']="Thêm thành công";
     }else{
         $error="Đã tồn tại công thức";
 
@@ -37,7 +39,7 @@ if(isset($_POST['submit'])){
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
         <main class="container"> 
-            <h1>Thêm một công thức mới</h1>
+            <h1 class="text-center">Thêm một công thức mới</h1>
             <form method="post" enctype="application/x-www-form-urlencoded" class="needs-validation" novalidate>
             <div class="form-group">
                     <label for="name">Danh mục</label>

@@ -26,7 +26,7 @@ if(isset($_GET['ma_loai']) && is_numeric($_GET['ma_loai']) && ($_GET['ma_loai']>
         $name=$row['ten_loai'];
 
     }else{
-        $erorro_message='Khong the lay du lieu';
+        $erorr='Khong the lay du lieu';
     }
 }
 
@@ -43,14 +43,14 @@ if(isset($_GET['ma_loai']) && is_numeric($_GET['ma_loai']) && ($_GET['ma_loai']>
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
         <main class="container"> 
-            <h1>Chỉnh sửa công thức</h1>
+            <h1 class="text-center">Chỉnh sửa công thức</h1>
             <form method="post" enctype="application/x-www-form-urlencoded" >
             <?php echo'<input type="hidden" name="id" value='.$_GET['ma_loai'].'>' ?>
 
                 <div class="form-group">
                     <label for="name">Tên công thức</label>
                     <?php 
-                        echo '<input type="text" class="form-control" id="name" name="name" value='.$name.'>';
+                        echo '<input type="text" class="form-control" id="name" name="name" value="'.$name.'">';
                     ?>
                 <div class="form-group">
                     <button class="ad btn btn-primary col-6 ms-5" type="submit" name="submit">Sửa</button>

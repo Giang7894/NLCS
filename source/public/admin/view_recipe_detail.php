@@ -15,6 +15,10 @@ if(isset($_GET['ma_ct'])){
 <html>
     <head>
         <?php require_once __DIR__ . '/../../framework.php' ?>
+        <?php if(!empty($_SESSION['msg'])){
+            echo'<script>alert("'.$_SESSION['msg'].'");</script>';
+        $_SESSION['msg']='';}
+         ?>
         <title>ADMIN Page</title>
     </head>
     <body >
@@ -24,8 +28,8 @@ if(isset($_GET['ma_ct'])){
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
         <main class="container">  
-            <h1>RECIPES</h1>
-            <table class="table table-hover">
+            <h1 class="text-center">Chi tiết</h1>
+            <table class="table table-hover table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>Mô tả</th>
@@ -37,10 +41,18 @@ if(isset($_GET['ma_ct'])){
                 <tbody>
                     <?php 
                     while($row=mysqli_fetch_array($result)){
-                        $id=$row['mo_ta'];
-                        $name=$row['dung_cu'];
-                        $pic=$row['nguyen_lieu'];
-                        $cate=$row['buoc'];
+                        $de=$row['mo_ta'];
+                        $tool=$row['dung_cu'];
+                        $ing=$row['nguyen_lieu'];
+                        $step=$row['buoc'];
+                        echo'
+                            <tr>
+                                <td>'.$de.'</td>
+                                <td>'.$tool.'</td>
+                                <td>'.$ing.'</td>
+                                <td>'.$step.'</td>
+                            </tr>
+                        ';
                     }
                     ?>
                 </tbody>

@@ -7,15 +7,18 @@ require_once __DIR__ . '/isadmin.php';
 
 <!DOCTYPE html>
 <html>
-    <head></head>
+    <head>
+        <?php require_once __DIR__ . '/../../framework.php';?>
+        <?php if(!empty($_SESSION['msg'])){
+            echo'<script>alert("'.$_SESSION['msg'].'");</script>';
+        $_SESSION['msg']='';}
+         ?>
+    </head>
     <body>
-        <header>
-            <?php require_once __DIR__ . '/../../framework.php';
-                require_once __DIR__ . '/nav.php';?>
-        </header>
-        <main>
-            <h1 class="text-center">Danh mục công thức</h1>
-            <table class="table table-hover">
+            <?php  require_once __DIR__ . '/nav.php';?>
+        <main class="container">
+            <h1 class="text-center">DANH MỤC</h1>
+            <table class="table table-hover table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>Mã danh mục</th>
@@ -34,15 +37,15 @@ require_once __DIR__ . '/isadmin.php';
                     else{$query='SELECT a.*,count(b.ma_ct) as tong FROM danh_muc as a left outer join cong_thuc as b  on a.ma_loai=b.ma_loai group by a.ma_loai';}
                     $stament=mysqli_query($connect,$query);
                     $count=mysqli_num_rows($stament);
-                    if($count==0) echo'<tr><td colspan="5" class="text-center">Không có danh mục nào<td></tr>';
+                    if($count==0) echo'<tr><td colspan="5" class="text-center">Không có danh mục nào</td></tr>';
                     else{
                     while($row=mysqli_fetch_array($stament)){
                         echo'<tr>
                             <td>'.$row['ma_loai'].'</td>
                             <td>'.$row['ten_loai'].'</td>
                             <td>'.$row['tong'].'</td>
-                            <td><a type="button" class="btn btn-success" href="edit_category.php?ma_loai='.$row['ma_loai'].'">Sửa</a></td>
-                            <td><a type="button" class="btn btn-danger" href="delete_category.php?ma_loai='.$row['ma_loai'].'">Xóa</a></td>
+                            <td><a type="button" class="btn btn-success" href="edit_category.php?ma_loai='.$row['ma_loai'].'"><i class="fas fa-edit pe-1"></i>Sửa</a></td>
+                            <td><a type="button" class="btn btn-danger" href="delete_category.php?ma_loai='.$row['ma_loai'].'"><i class="fa-solid fa-trash pe-1" style="color: #ffffff;"></i>Xóa</a></td>
                         </tr>';
                     }}
                     ?>

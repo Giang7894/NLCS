@@ -11,6 +11,10 @@ require_once __DIR__ . '/isadmin.php';
 <html>
     <head>
         <?php require_once __DIR__ . '/../../framework.php' ?>
+        <?php if(!empty($_SESSION['msg'])){
+            echo'<script>alert("'.$_SESSION['msg'].'");</script>';
+        $_SESSION['msg']='';}
+         ?>
         <title>ADMIN Page</title>
     </head>
     <body >
@@ -20,8 +24,8 @@ require_once __DIR__ . '/isadmin.php';
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
         <main class="container">  
-            <h1>RECIPES</h1>
-            <table class="table table-hover">
+            <h1 class="text-center">CÔNG THỨC</h1>
+            <table class="table table-hover table-striped table-bordered">
                 <thead>
                     <tr>
                         <th >Tên món ăn</th>
@@ -41,7 +45,7 @@ require_once __DIR__ . '/isadmin.php';
                     {$query='SELECT a.*,b.ten_loai from cong_thuc as a join danh_muc as b where a.ma_loai=b.ma_loai';}
                     $result=mysqli_query($connect, $query);
                     $count=mysqli_num_rows($result);
-                    if($count==0) echo'<tr><td colspan="6" class="text-center">Không có công thức<td></tr>';
+                    if($count==0) echo'<tr><td colspan="6" class="text-center">Không có công thức</td></tr>';
                     else{
                     while($row=mysqli_fetch_array($result)){
                         $id=$row['ma_ct'];
@@ -52,10 +56,10 @@ require_once __DIR__ . '/isadmin.php';
                             <td>$name</td>
                             <td>$cate</td>
                             <td><img class=\"img\" width=\"150px\" height=\"150px\" src=\"$pic\"></td>
-                            <td><a type=\"button\" class=\"btn btn-info\" href=\"view_recipe_detail?ma_ct=$id\"</td>
-                            <td><a href=\"edit_recipe.php?id={$id}\">Sửa</a></td>
-                            <td><button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal$id\">
-                            Xoá
+                            <td><a type=\"button\" class=\"btn btn-info\" href=\"view_recipe_detail.php?ma_ct=$id\"><i class=\"fa-regular fa-eye pe-1\" style=\"color: #ffffff;\"></i>Xem chi tiết</a></td>
+                            <td><a type=\"button\" class=\"btn btn-success\" href=\"edit_recipe.php?id=$id\"><i class=\"fas fa-edit pe-1\"></i>Sửa</a></td>
+                            <td><button type=\"button\" class=\"btn btn-danger\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal$id\">
+                            <i class=\"fa-solid fa-trash pe-1\" style=\"color: #ffffff;\"></i>Xoá
                           </button></td>
                         </tr>";
                         echo"
