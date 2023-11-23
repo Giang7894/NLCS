@@ -6,13 +6,10 @@
         $username=$_POST['username'];
         $password=$_POST['password'];
         $passwordrepeat=$_POST['passwordrepeat'];   
-        $time=new \DATETIME();
-        $time->setTimezone(new \DateTimeZone('Asia/Ho_Chi_Minh'));
-        $dateTime = $time->format(' Y-m-d h:m:s ');
 
-        $sql="INSERT INTO taikhoan(tentaikhoan,matkhau,ngaytaotk) values ('$username','$password','$dateTime')";
+        $sql="INSERT INTO tai_khoan(ten_tk,mat_khau) values ('$username','$password')";
 
-        $sql1="SELECT id,tentaikhoan from taikhoan where tentaikhoan='$username'";
+        $sql1="SELECT id,ten_tk from tai_khoan where ten_tk='$username'";
 
         $query=mysqli_query($connect,$sql1);
         $row=mysqli_fetch_array($query);

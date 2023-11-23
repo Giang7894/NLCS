@@ -29,7 +29,7 @@ if(isset($_GET['ma_ct'])){
     </form>
         <main class="container">  
             <h1 class="text-center">Chi tiết</h1>
-            <table class="table table-hover table-striped table-bordered">
+            <table class="table table-hover table-striped table-bordered border-black">
                 <thead>
                     <tr>
                         <th>Mô tả</th>

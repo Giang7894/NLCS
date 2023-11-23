@@ -7,7 +7,7 @@ require_once __DIR__ . '/../db/db_connection.php';
 
 
 
-$query="SELECT * FROM congthuc";
+$query="SELECT * FROM cong_thuc";
 
 $stament=mysqli_query($connect,$query);
 
@@ -40,9 +40,9 @@ $i=0;
         <?php while($row=mysqli_fetch_array($stament)){
                     echo'
                         <div class="col">
-                        <img class="img" src="'.$row['hinhanh'].'"/>
-                        <div><a href="view_recipe.php?id='.$row['macongthuc'].'">'.$row['tencongthuc'].'</a></div>
-                        <div>'.$row['mota'].'</div>
+                        <img class="img" src="'.$row['hinh_anh'].'"/>
+                        <div><a href="view_recipe.php?id='.$row['ma_ct'].'">'.$row['ten_ct'].'</a></div>
+                        <div>'.$row['mo_ta'].'</div>
                         </div>';
             if($i==2){
                 echo'

@@ -19,16 +19,14 @@ require_once __DIR__ . '/isadmin.php';
     </head>
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
-        <form class="d-flex" method="GET" action="#">
-      <input class="form-control me-2" type="search" placeholder="Tìm kiếm một công thức nào đó" aria-label="Search" name="search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+
         <main class="container">  
             <h1 class="text-center">CÔNG THỨC</h1>
-            <table class="table table-hover table-striped table-bordered">
+            <a type="button" class="btn btn-primary mb-5" href="add_recipe.php"><i class="fa fa-plus pe-2" aria-hidden="true"></i>Thêm</a>
+            <table class="table table-hover table-striped table-bordered border-black">
                 <thead>
                     <tr>
-                        <th >Tên món ăn</th>
+                        <th >Tên công thức</th>
                         <th>Danh mục</th>
                         <th >Hình ảnh</th>
                         <th>Chi tiết</th>

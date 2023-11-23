@@ -13,13 +13,10 @@
     </head>
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
-        <form class="d-flex" method="GET" action="#">
-      <input class="form-control me-2" type="search" placeholder="Tìm kiếm các đánh giá của một tài khoản hoặc một công thức nào đó" aria-label="Search" name="search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+
         <main class="container">  
             <h1 class="text-center">ĐÁNH GIÁ</h1>
-            <table class="table table-hover table-striped table-bordered">
+            <table class="table table-hover table-striped table-bordered border-black">
                 <thead>
                     <tr>
                         <th>Tên tài khoản</th>

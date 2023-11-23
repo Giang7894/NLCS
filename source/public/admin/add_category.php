@@ -34,21 +34,33 @@ if(isset($_POST['submit'])){
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
         <main class="container"> 
-            <h1 class="text-center">Thêm một danh mục mới</h1>
-            <form method="post" enctype="application/x-www-form-urlencoded" class="needs-validation" novalidate>
-                <div class="form-group">
-                    <label for="name">Tên danh mục</label>
-                    <input type="text" class="form-control" id="name" name="ten" placeholder="" required pattern=".{,20}">
-                    <div class="invalid-feedback">
-                        Vui lòng nhập tên danh mục.
-                    </div>
+            <h1 class="text-center pb-5">Thêm một danh mục mới</h1>
+            <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <hr>
+                    <div class="col-3"></div>
                 </div>
-                <div class="form-group">
-                    <button class="ad btn btn-primary col-6 ms-5" type="submit" name="submit">Thêm</button>
-                    <button class="btn btn-secondary col-2 float-end me-5" type="reset">Hủy</button>
-                </div> 
-            </form>
-
+            </div>
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                    <form method="post" enctype="application/x-www-form-urlencoded" class="needs-validation mt-5 border border-black border-1 p-2" novalidate>
+                        <div class="form-group">
+                            <label for="name">Tên danh mục</label>
+                            <input type="text" class="form-control" id="name" name="ten" placeholder="" required pattern=".{,20}">
+                            <div class="invalid-feedback">
+                                Vui lòng nhập tên danh mục.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="ad btn btn-primary col-6 mt-3" type="submit" name="submit">Thêm</button>
+                            <button class="btn btn-secondary col-2 float-end mt-3" type="reset">Hủy</button>
+                        </div> 
+                    </form>
+                    <div class="col-3"></div>
+                </div>
+            </div>
         </main>
     </body>
         

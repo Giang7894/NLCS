@@ -14,13 +14,9 @@ require_once __DIR__ . '/isadmin.php';
     </head>
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
-        <form class="d-flex" method="GET" action="#">
-      <input class="form-control me-2" type="search" placeholder="Tìm kiếm một tài khoản nào đó" aria-label="Search" name="search" value="<?php if(isset($_GET['search'])) echo''.$_GET['search'].''; ?>">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
         <main class="container">  
             <h1 class="text-center">NGƯỜI DÙNG</h1>
-            <table class="table table-hover table-striped table-bordered">
+            <table class="table table-hover table-striped table-bordered border-black">
                 <thead>
                     <tr>
                         <th>Tên tài khoản</th>

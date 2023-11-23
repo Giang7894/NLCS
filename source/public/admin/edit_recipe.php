@@ -17,7 +17,7 @@ if(isset($_POST['id']) && is_numeric($_POST['id']) && $_POST['id']>0){
 
     mysqli_query($connect, $query1); 
     $_SESSION['msg']="Sửa thành công";
-    header('location:view_recipe_detail.php?ma_ct='.$_POST['id'].'');
+    header('location:view_recipes.php');
 }
 
 if(isset($_GET['id']) && is_numeric($_GET['id']) && ($_GET['id']>0)){
@@ -70,13 +70,13 @@ if(isset($_GET['id']) && is_numeric($_GET['id']) && ($_GET['id']>0)){
                 <div class="form-group">
                     <label for="name">Tên công thức</label>
                     <?php 
-                        echo '<input type="text" class="form-control" id="name" name="name" value='.$name.'>';
+                        echo '<input type="text" class="form-control" id="name" name="name" value="'.$name.'">';
                     ?>
                 </div>
                 <div class="form-group">
                     <label for="img">Hình ảnh (URL)</label>
                     <?php 
-                        echo '<input type="text" class="form-control" id="img" name="img" value='.$img.'>';
+                        echo '<input type="text" class="form-control" id="img" name="img" value="'.$img.'">';
                     ?>
                 </div>
                 <div class="form-group">

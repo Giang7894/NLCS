@@ -6,7 +6,7 @@ require_once __DIR__ . '/../db/db_connection.php';
 
 
 if(isset($_POST['submit'])){
-  $query="INSERT INTO chitiettaikhoan values('$_SESSION[id]','$_POST[name]','$_POST[phone]','$_POST[gender]','$_POST[email]')";
+  $query="INSERT INTO chi_tiet_tk values('$_SESSION[id]','$_POST[name]','$_POST[phone]','$_POST[email]')";
   $stament=mysqli_query($connect,$query);
   header('location:index.php');
 }
@@ -35,16 +35,12 @@ if(isset($_POST['submit'])){
                         <label for="floatingPassword">SDT</label>
                       </div>
                       <div class="form-floating mx-5 mb-3">
-                        <input type="text" class="form-control" name="gender" placeholder="" aria-labelledby="passwordHelpBlock" id="floatingPassword2">
-                        <label for="floatingPassword2">Giới tính</label>
-                      </div>
-                      <div class="form-floating mx-5 mb-3">
                         <input type="email" class="form-control" name="email" placeholder="" aria-labelledby="passwordHelpBlock" id="floatingPassword2">
                         <label for="floatingPassword2">Email</label>
                       </div>
                       <div >
                         <button class="ad btn btn-primary col-6 ms-5" type="submit" name="submit">Cập nhật</button>
-                        <a class="ad btn btn-primary col-2 ms-5" id="skip" type="button">Bo qua</a>
+                        <a class="ad btn btn-primary col-2 ms-5" id="skip" type="button">Bỏ qua</a>
                       </div>                    
                 </fieldset>
             </form>
