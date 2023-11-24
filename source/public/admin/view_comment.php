@@ -16,7 +16,7 @@
         <?php require_once __DIR__ . '/nav.php'?>
 
         <main class="container">  
-            <h1 class="text-center">BÌNH LUẬN</h1>
+            <h1 class="text-center pb-5">BÌNH LUẬN</h1>
             <table class="table table-hover table-striped table-bordered border-black">
                 <thead>
                     <tr>
@@ -31,7 +31,7 @@
                     <?php
                     if(isset($_GET['search']) && !empty($_GET['search'])){
                         $search=$_GET['search'];
-                        $query="SELECT a.*,b.ten_tk,c.ten_ct  FROM binh_luan as a  join cong_thuc as c  join tai_khoan as b where a.id=b.id  and a.ma_ct=c.ma_ct and (b.ten_tk like '%$search%' or c.ten_ct like '%$search%')";
+                        $query="SELECT a.*,b.ten_tk,c.ten_ct  FROM binh_luan as a  join cong_thuc as c  join tai_khoan as b where a.id=b.id  and a.ma_ct=c.ma_ct and (b.ten_tk like '%$search%' or c.ten_ct like '%$search%' or a.binh_luan like '%$search%')";
                      }else
                     {$query='SELECT a.*,b.ten_tk,c.ten_ct   FROM binh_luan as a  join cong_thuc as c  join tai_khoan as b where a.id=b.id  and a.ma_ct=c.ma_ct';}
                     $stament=mysqli_query($connect,$query);
@@ -42,7 +42,7 @@
                         $username=$row['ten_tk'];
                         $recipe=$row['ten_ct'];
                         $time=$row['ngay_gio'];
-                        $cmt=$row['binhluan'];
+                        $cmt=$row['binh_luan'];
                         $id=$row['id'];
                         $recipeid=$row['ma_ct'];
                         if($row['an']==0) $stt="Bình thường";
@@ -52,7 +52,7 @@
                             <td>'.$recipe.'</td>
                             <td>'.$time.'</td>
                             <td>'.$cmt.'</td>
-                            <td>'.$stt.'<a type="button" class="btn btn-info" href="hide_cmt.php?id='.$id.'&ma_ct='.$recipeid.'&ngay_gio='.$time.'"> Ẩn</a></td>
+                            <td>'.$stt.'<a type="button" class="btn btn-warning ms-2" href="hide_cmt.php?id='.$id.'&ma_ct='.$recipeid.'&ngay_gio='.$time.'"> Ẩn</a></td>
                         </tr>';
                     }}
                     ?>

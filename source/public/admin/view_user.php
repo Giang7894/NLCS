@@ -16,7 +16,7 @@ require_once __DIR__ . '/isadmin.php';
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
         <main class="container">  
-            <h1 class="text-center">NGƯỜI DÙNG</h1>
+            <h1 class="text-center pb-5">NGƯỜI DÙNG</h1>
             <table class="table table-hover table-striped table-bordered border-black">
                 <thead>
                     <tr>
@@ -52,8 +52,34 @@ require_once __DIR__ . '/isadmin.php';
                             <td>'.$name.'</td>
                             <td>'.$phone.'</td>
                             <td>'.$email.'</td>
-                            <td><a type="button" class="btn btn-danger" href="delete_user.php?id='.$id.'"><i class="fa-solid fa-trash pe-1" style="color: #ffffff;"></i>Xóa</a></td>
-                        </tr>';
+                            <td><a type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal'.$id.'"><i class="fa-solid fa-trash pe-1" style="color: #ffffff;"></i>Xóa</a></td>
+                        ';
+                        echo'
+                        <div class="modal fade" id="myModal'.$id.'">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                      
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">Xóa người dùng</h4>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                      
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                              Bạn có thật sự muốn xóa người dùng này
+                            </div>
+                      
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                            <a href="delete_user.php?ma_loai='.$id.'" class="btn btn-danger" role="button" >Xóa</a>
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                            </div>
+                      
+                          </div>
+                        </div>
+                      </div>
+                        ';
                     }}
                     ?>
                 </tbody>

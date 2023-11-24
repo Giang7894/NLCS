@@ -6,15 +6,15 @@ require_once __DIR__ . '/isuser.php';
 
 
  if(isset($_SESSION['id']) && ($_SESSION['id']>0)){
-    $query="SELECT * from chitiettaikhoan where id='$_SESSION[id]'";
+    $query="SELECT * from chi_tiet_tk where id='$_SESSION[id]'";
     $stament=mysqli_query($connect,$query);
     $row=mysqli_fetch_array($stament);
  }
 if(isset($_POST['submit']) && empty($row)){
-    $query="INSERT INTO chitiettaikhoan values('$_SESSION[id]','$_POST[name]','$_POST[phone]','$_POST[gender]','$_POST[email]')";
+    $query="INSERT INTO chi_tiet_tk values('$_SESSION[id]','$_POST[name]','$_POST[phone]','$_POST[email]')";
     $stament=mysqli_query($connect,$query);
 }elseif(isset($_POST['submit']) && !empty($row)){
-    $query="UPDATE chitiettaikhoan set hoten='$_POST[name]',sdt='$_POST[phone]',gioitinh='$_POST[gender]',email='$_POST[email]' where id='$_SESSION[id]'";
+    $query="UPDATE chi_tiet_tk set hoten='$_POST[name]',sdt='$_POST[phone]',email='$_POST[email]' where id='$_SESSION[id]'";
     $stament=mysqli_query($connect,$query);
 
 }
@@ -35,7 +35,7 @@ if(isset($_POST['submit']) && empty($row)){
                 <fieldset>
                     <legend>Cập nhật thông tin</legend>
                       <div class="form-floating m-5 mb-3">
-                        <input type="text" class="form-control" name="name"  placeholder="" id="floatingInput3" value="<?php if(!empty($row)) echo''.$row['hoten'].''; ?>">
+                        <input type="text" class="form-control" name="name"  placeholder="" id="floatingInput3" value="<?php if(!empty($row)) echo''.$row['ten_nguoi_dung'].''; ?>">
                         <label for="floatingInput3">Họ tên</label>
                       </div>
                       <div class="form-floating mx-5 mb-3">
@@ -43,15 +43,11 @@ if(isset($_POST['submit']) && empty($row)){
                         <label for="floatingInput1">SDT</label>
                       </div>
                       <div class="form-floating mx-5 mb-3">
-                        <input type="text" class="form-control" name="gender" placeholder=""  id="floatingInput2" value="<?php if(!empty($row)) echo''.$row['gioitinh'].''; ?>">
-                        <label for="floatingInput2">Giới tính</label>
-                      </div>
-                      <div class="form-floating mx-5 mb-3">
                         <input type="email" class="form-control" name="email" placeholder=""  id="floatingInput4" value="<?php if(!empty($row)) echo''.$row['email'].''; ?>">
                         <label for="floatingInput4">Email</label>
                       </div>
                       <div >
-                        <button class="ad btn btn-primary col-6 ms-5" type="submit" name="submit">Cập nhật</button>
+                        <button class="ad btn btn-primary col-10 m-5" type="submit" name="submit">Cập nhật</button>
                       </div>                    
                 </fieldset>
             </form>

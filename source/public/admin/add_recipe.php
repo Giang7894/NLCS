@@ -41,8 +41,18 @@ if(isset($_POST['submit'])){
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
         <main class="container"> 
-            <h1 class="text-center">Thêm một công thức mới</h1>
-            <form method="post" enctype="application/x-www-form-urlencoded" class="needs-validation bg-white mt-5 border border-black border-1 p-2" novalidate>
+            <h1 class="text-center pb-5">Thêm một công thức mới</h1>
+            <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <hr>
+                    <div class="col-3"></div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+            <form method="post" enctype="application/x-www-form-urlencoded" class="needs-validation bg-white mt-5 mb-5 border border-black border-1 p-3" novalidate>
             <div class="form-group my-3">
                     <label for="name">Danh mục</label>
                     <select name="cate">
@@ -91,7 +101,9 @@ if(isset($_POST['submit'])){
                     <button class="btn btn-secondary col-2 float-end my-3" type="reset">Hủy</button>
                 </div> 
             </form>
-
+            <div class="col-2"></div>
+                </div>
+            </div>
         </main>
     </body>
         

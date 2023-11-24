@@ -39,7 +39,7 @@ require_once __DIR__ . '/isadmin.php';
                     <?php 
                     if(isset($_GET['search']) && !empty($_GET['search'])){
                       $search=$_GET['search'];
-                      $query="SELECT a.*,b.ten_loai FROM cong_thuc as a join danh_muc as b  where a.ma_loai=b.ma_loai and  (a.ten_ct like '%$search%' or a.nguyen_lieu like '%$search%' or b.ten_loai like '%$search%')";
+                      $query="SELECT a.*,b.ten_loai FROM cong_thuc as a join danh_muc as b  where a.ma_loai=b.ma_loai and  (a.ten_ct like '%$search%' or a.nguyen_lieu like '% $search %' or b.ten_loai like '%$search%')";
                    }else
                     {$query='SELECT a.*,b.ten_loai from cong_thuc as a join danh_muc as b where a.ma_loai=b.ma_loai';}
                     $result=mysqli_query($connect, $query);

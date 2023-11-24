@@ -178,7 +178,7 @@
   left: 0;
   padding: 70px 0 0; 
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
-  width: 190px;
+  width: 180px;
   z-index: 600;
 }
 

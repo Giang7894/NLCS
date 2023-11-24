@@ -39,8 +39,8 @@ if(isset($_POST['submit'])){
                         <label for="floatingPassword2">Email</label>
                       </div>
                       <div >
-                        <button class="ad btn btn-primary col-6 ms-5" type="submit" name="submit">Cập nhật</button>
-                        <a class="ad btn btn-primary col-2 ms-5" id="skip" type="button">Bỏ qua</a>
+                        <button class="ad btn btn-primary col-6 ms-5 mb-5" type="submit" name="submit">Cập nhật</button>
+                        <a class="ad btn btn-primary col-2 ms-5 mb-5" id="skip" type="button">Bỏ qua</a>
                       </div>                    
                 </fieldset>
             </form>

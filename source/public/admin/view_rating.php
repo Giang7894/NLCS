@@ -16,7 +16,7 @@
         <?php require_once __DIR__ . '/nav.php'?>
 
         <main class="container">  
-            <h1 class="text-center">ĐÁNH GIÁ</h1>
+            <h1 class="text-center pb-5">ĐÁNH GIÁ</h1>
             <table class="table table-hover table-striped table-bordered border-black">
                 <thead>
                     <tr>
