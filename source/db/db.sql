@@ -99,3 +99,18 @@ ADD COLUMN `hinh_anh` LONGTEXT NOT NULL AFTER `ma_loai`;
 
   ALTER TABLE `recipes`.`binh_luan` 
 ADD COLUMN `an` INT NOT NULL ;
+
+ALTER TABLE `recipes`.`danh_gia` 
+ADD INDEX `fdfdfd_idx` (`id` ASC) VISIBLE;
+;
+ALTER TABLE `recipes`.`danh_gia` 
+ADD CONSTRAINT `âsasas`
+  FOREIGN KEY (`ma_ct`)
+  REFERENCES `recipes`.`cong_thuc` (`ma_ct`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `fdfdfd`
+  FOREIGN KEY (`id`)
+  REFERENCES `recipes`.`tai_khoan` (`id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;

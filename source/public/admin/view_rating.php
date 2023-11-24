@@ -29,9 +29,9 @@
                     <?php
                     if(isset($_GET['search']) && !empty($_GET['search'])){
                         $search=$_GET['search'];
-                        $query="SELECT a.*,b.ten_tk,c.ten_ct  FROM danh_gia as a  join cong_thuc as c  join tai_khoan as b where a.id=b.id  and a.ma_ct=c.ma_ct and (b.ten_tk like '%$search%' or c.ten_ct like '%$search%')";
+                        $query="SELECT a.*,b.ten_tk,c.ten_ct  FROM danh_gia as a  join cong_thuc as c  join tai_khoan as b where a.id=b.id  and a.ma_ct=c.ma_ct and (b.ten_tk like '%$search%' or c.ten_ct like '%$search%' or a.so_sao='$search')";
                      }else
-                    {$query='SELECT a.*,b.ten_tk,c.ten_ct   FROM danh_gia as a  join cong_thuc as c  join tai_khoan as b where a.id=b.id  and a.ma_ct=c.ma_ct';}
+                    {$query='SELECT distinct a.*,b.ten_tk,c.ten_ct   FROM danh_gia as a  join cong_thuc as c  join tai_khoan as b where a.id=b.id and a.ma_ct=c.ma_ct order by c.ten_ct asc';}
                     $stament=mysqli_query($connect,$query);
                     $count=mysqli_num_rows($stament);
                     if($count==0) echo'<tr><td colspan="3" class="text-center">Không có đánh giá nào</td></tr>';
@@ -44,8 +44,9 @@
                         echo'<tr>
                             <td>'.$username.'</td>
                             <td>'.$recipe.'</td>
-                            <td>'.$star.'</td>
-                        </tr>';
+                            <td>';
+                        for ($i=1;$i<=$star;$i++)  echo '<i class="fa-solid fa-star" style="color: #ea8f10;"></i>';
+                        echo'('.$star.')</td></tr>';
                     }}
                     ?>
                 </tbody>

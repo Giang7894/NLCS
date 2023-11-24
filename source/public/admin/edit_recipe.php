@@ -54,8 +54,18 @@ if(isset($_GET['id']) && is_numeric($_GET['id']) && ($_GET['id']>0)){
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
         <main class="container"> 
-            <h1 class="text-center">Chỉnh sửa công thức</h1>
-            <form method="post" enctype="application/x-www-form-urlencoded" >
+            <h1 class="text-center pb-5">Chỉnh sửa công thức</h1>
+            <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <hr>
+                    <div class="col-3"></div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+            <form method="post" enctype="application/x-www-form-urlencoded" class="bg-white mt-5 mb-5 border border-black border-1 p-3">
             <?php echo'<input type="hidden" name="id" value='.$_GET['id'].'>' ?>
                 <div class="form-group">
                     <label for="name">Danh mục</label>
@@ -105,10 +115,12 @@ if(isset($_GET['id']) && is_numeric($_GET['id']) && ($_GET['id']>0)){
                     ?>
                 </div>
                 <div class="form-group">
-                    <button class="ad btn btn-primary col-6 ms-5" type="submit" name="submit">Sửa</button>
+                    <button class="ad btn btn-primary col-10 m-5" type="submit" name="submit">Sửa</button>
                 </div> 
             </form>
-
+            <div class="col-2"></div>
+                </div>
+            </div>
         </main>
     </body>
         

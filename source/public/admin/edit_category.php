@@ -73,7 +73,7 @@ if(isset($_GET['ma_loai']) && is_numeric($_GET['ma_loai']) && ($_GET['ma_loai']>
                                 Vui lòng nhập tên danh mục.
                     </div>
                 <div class="form-group">
-                    <button class="ad btn btn-primary col-6 ms-5" type="submit" name="submit">Sửa</button>
+                    <button class="ad btn btn-primary col-10 m-5" type="submit" name="submit">Sửa</button>
                 </div> 
                 </form>
                     <div class="col-3"></div>
