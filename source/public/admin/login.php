@@ -27,6 +27,8 @@
     <head>
     <link href="css/login.css" rel="stylesheet">
     <?php require_once __DIR__ . '/../../framework.php'; ?>
+    <title>ADMIN Page</title>
+         <link href="/../img/logo.jpg" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     </head>
     <body>
         <main>

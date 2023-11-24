@@ -30,6 +30,14 @@ if(isset($_POST['submit'])){
         <?php if(!empty($row)){
             echo'<script>alert("'.$error.'");</script>';}
          ?>
+                  <title>ADMIN Page</title>
+         <link href="/../img/logo.jpg" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+         <style>
+                #add{
+                    background: white;
+                    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 12%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+                }
+         </style>
     </head>
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
@@ -45,17 +53,17 @@ if(isset($_POST['submit'])){
                 <div class="row">
                     <div class="col-3"></div>
                     <div class="col-6">
-                    <form method="post" enctype="application/x-www-form-urlencoded" class="needs-validation mt-5 border border-black border-1 p-2" novalidate>
+                    <form method="post" enctype="application/x-www-form-urlencoded" class="needs-validation mt-5 border border-black border-1 p-2" novalidate id="add">
                         <div class="form-group">
                             <label for="name">Tên danh mục</label>
-                            <input type="text" class="form-control" id="name" name="ten" placeholder="" required pattern=".{,20}">
+                            <input type="text" class="form-control my-3" id="name" name="ten" placeholder="" required pattern=".{,20}">
                             <div class="invalid-feedback">
                                 Vui lòng nhập tên danh mục.
                             </div>
                         </div>
                         <div class="form-group">
-                            <button class="ad btn btn-primary col-6 mt-3" type="submit" name="submit">Thêm</button>
-                            <button class="btn btn-secondary col-2 float-end mt-3" type="reset">Hủy</button>
+                            <button class="ad btn btn-primary col-6 my-3" type="submit" name="submit">Thêm</button>
+                            <button class="btn btn-secondary col-2 float-end my-3" type="reset">Hủy</button>
                         </div> 
                     </form>
                     <div class="col-3"></div>

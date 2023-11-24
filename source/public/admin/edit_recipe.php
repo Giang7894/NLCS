@@ -13,7 +13,7 @@ if(isset($_POST['id']) && is_numeric($_POST['id']) && $_POST['id']>0){
     $steps=$_POST['step'];
     $cate=$_POST['cate'];
 
-    $query1="UPDATE cong_thuc set ten_ct='$name',hinh_anh='$img',mo_ta='$descrb',ma_loai='$cate' where ma_ct='$_POST[id]'";
+    $query1="UPDATE cong_thuc set ten_ct='$name',hinh_anh='$img',mo_ta='$descrb',ma_loai='$cate',dung_cu='$tool',nguyen_lieu='$ingredient',buoc='$steps' where ma_ct='$_POST[id]'";
 
     mysqli_query($connect, $query1); 
     $_SESSION['msg']="Sửa thành công";
@@ -49,6 +49,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id']) && ($_GET['id']>0)){
     <head>
         <?php require_once __DIR__ . '/../../framework.php' ?>
         <title>ADMIN Page</title>
+         <link href="/../img/logo.jpg" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     </head>
     <body >
         <?php require_once __DIR__ . '/nav.php'?>

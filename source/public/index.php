@@ -21,14 +21,7 @@ $i=0;
         <meta charset="UTF-8">
         <title>Let me cook</title>
         <?php require_once __DIR__ . '/../framework.php' ?>
-        <link href="css/index.css" type="stylesheet">
         <link href="img/logo.jpg" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-        <style>
-            .img{
-    height: 100px;
-    width: 100px;
-}
-        </style>
     </head>
     <body>
         <?php

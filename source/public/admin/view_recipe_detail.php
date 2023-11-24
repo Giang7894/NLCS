@@ -19,7 +19,8 @@ if(isset($_GET['ma_ct'])){
             echo'<script>alert("'.$_SESSION['msg'].'");</script>';
         $_SESSION['msg']='';}
          ?>
-        <title>ADMIN Page</title>
+                 <title>ADMIN Page</title>
+         <link href="/../img/logo.jpg" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     </head>
     <body >
         <?php require_once __DIR__ . '/nav.php'?>

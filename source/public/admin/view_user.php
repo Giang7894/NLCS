@@ -11,6 +11,7 @@ require_once __DIR__ . '/isadmin.php';
     <head>
         <?php require_once __DIR__ . '/../../framework.php' ?>
         <title>ADMIN Page</title>
+         <link href="/../img/logo.jpg" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     </head>
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
@@ -32,7 +33,7 @@ require_once __DIR__ . '/isadmin.php';
                         $search=$_GET['search'];
                         $query="SELECT * FROM tai_khoan as a left outer join chi_tiet_tk as b on a.id=b.id where  ten_tk like '%$search%' or ten_nguoi_dung like '%$search%'";
                      }
-                    else{$query='SELECT a.ten_tk,b.ten_nguoi_dung,b.sdt,b.email  FROM tai_khoan as a left outer join chi_tiet_tk as b on a.id=b.id ';}
+                    else{$query='SELECT a.ten_tk,b.ten_nguoi_dung,b.sdt,b.email,a.id  FROM tai_khoan as a left outer join chi_tiet_tk as b on a.id=b.id ';}
                     $stament=mysqli_query($connect,$query);
                     $count=mysqli_num_rows($stament);
                     if($count==0) echo'<tr><td colspan="5" class="text-center">Không có người dùng nào</td></tr>';
@@ -43,7 +44,7 @@ require_once __DIR__ . '/isadmin.php';
                         $name=$row['ten_nguoi_dung'];
                         if(is_null($name)) $name="Chưa điền thông tin";
                         $email=$row['email'];
-                        if(is_null($sex)) $sex="Chưa điền thông tin";
+                        if(is_null($email)) $email="Chưa điền thông tin";
                         $phone=$row['sdt'];
                         if(is_null($phone)) $phone="Chưa điền thông tin";
                         echo'<tr>

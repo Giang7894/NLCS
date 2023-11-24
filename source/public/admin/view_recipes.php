@@ -15,7 +15,8 @@ require_once __DIR__ . '/isadmin.php';
             echo'<script>alert("'.$_SESSION['msg'].'");</script>';
         $_SESSION['msg']='';}
          ?>
-        <title>ADMIN Page</title>
+                 <title>ADMIN Page</title>
+         <link href="/../img/logo.jpg" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     </head>
     <body >
         <?php require_once __DIR__ . '/nav.php'?>
@@ -38,7 +39,7 @@ require_once __DIR__ . '/isadmin.php';
                     <?php 
                     if(isset($_GET['search']) && !empty($_GET['search'])){
                       $search=$_GET['search'];
-                      $query="SELECT a.*,b.ten_loai FROM cong_thuc as a join danh_muc as b  where a.ma_loai=b.ma_loai and  (a.ten_ct like '% $search %' or a.nguyen_lieu like '% $search %')";
+                      $query="SELECT a.*,b.ten_loai FROM cong_thuc as a join danh_muc as b  where a.ma_loai=b.ma_loai and  (a.ten_ct like '%$search%' or a.nguyen_lieu like '%$search%' or b.ten_loai like '%$search%')";
                    }else
                     {$query='SELECT a.*,b.ten_loai from cong_thuc as a join danh_muc as b where a.ma_loai=b.ma_loai';}
                     $result=mysqli_query($connect, $query);

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <header>
   <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse ">
     <div class="position-sticky">
@@ -203,7 +204,7 @@
  </style>
  <script>
     $(document).ready(function(){
-      console.log(!(location.href.startsWith("http://recipes.localhost/admin/view_")) || (location.href.startsWith("http://recipes.localhost/admin/view_recipe_detail.php")));
+
       if(location.href==="http://recipes.localhost/admin/view_recipes.php" || location.href==="http://recipes.localhost/admin/add_recipe.php"){
         $("#collapseExample2").last().addClass("show");
       }
