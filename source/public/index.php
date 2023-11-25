@@ -4,7 +4,7 @@ session_start();
 
 require_once __DIR__ . '/../db/db_connection.php';
 
-$query="SELECT a.ma_ct,avg(a.so_sao) as tb,count(a.id) as tong,b.ten_ct,b.hinh_anh,b.mo_ta From danh_gia as a  join cong_thuc as b on a.ma_ct=b.ma_ct group by a.ma_ct order by tb desc";
+$query="SELECT a.ma_ct,a.ten_ct,a.hinh_anh,avg(so_sao) as tb,count(b.id) as tong from cong_thuc as a left outer join danh_gia as b on a.ma_ct=b.ma_ct group by a.ma_ct order by tb desc";
 $r=mysqli_query($connect,$query);
 
 ?>

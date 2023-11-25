@@ -44,8 +44,8 @@
   <?php 
   if(isset($_SESSION['id'])) {
     $s="SELECT ten_tk from tai_khoan where id='$_SESSION[id]'";
-    $r=mysqli_query($connect,$s);
-    $ten=mysqli_fetch_array($r);
+    $res=mysqli_query($connect,$s);
+    $ten=mysqli_fetch_array($res);
     echo'
     <li class="nav-item dropdown ps-5 pe-5" id="av">
       <a
@@ -62,7 +62,7 @@
         class="dropdown-menu dropdown-menu-end ms-2"
         aria-labelledby="navbarDropdownMenuLink"
       >
-      <li><a class="dropdown-item" href="editprofile.php">MY RECIPES</a></li>
+      <li><a class="dropdown-item" href="store.php">MY RECIPES</a></li>
       <li><a class="dropdown-item" href="editprofile.php">Profile</a></li>
         <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
       </ul>
