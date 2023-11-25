@@ -19,7 +19,7 @@
   </button>
 
 
-  <a class="navbar-brand" href="index.php">
+  <a class="navbar-brand ps-5" href="index.php">
     <img
       src="/../img/logo.jpg"
       height="50"
@@ -67,7 +67,7 @@
         <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
       </ul>
     </li>';}else{
-      echo '<li class="nav-item ps-5 pe-5 border-end border-start">
+      echo '<li class="nav-item ps-5 pe-5  border-start me-5">
       <a class="nav-link" href="login.php">ĐĂNG NHẬP</a>
     </li>';
     }
@@ -83,7 +83,9 @@
       cursor: pointer;
     }
 
-
+    main{
+      padding-top: 100px;
+    }
 
 #main-navbar{
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);

@@ -1,6 +1,5 @@
 <?php
 
-require_once __DIR__ . '/isuser.php';
 
 require_once __DIR__ . '/../db/db_connection.php';
 
@@ -54,10 +53,9 @@ if(isset($_POST['submit'])){
             ?>
         </main>
         <aside class="container">
-            <h1>Binh luan</h1>
+            <h1>ĐÁNH GIÁ</h1>
             <form method="post">
                 <div>
-                    <div>Ban</div>
                     <div name="star">Đánh giá</div>
                     <span class="rating-group">
                         <span><i class="fa-regular fa-star" style="color: #ea8f10;"  id="1" onmouseenter="rating(this.id)" onmouseleave="unrating(this.id)" onclick="rate(this.id)"></i></span>
@@ -68,6 +66,7 @@ if(isset($_POST['submit'])){
                     </span>
                 </div>
             </form>
+            <h1>BÌNH LUẬN</h1>
             <form method="post">
                     <input name="cmt"></input>
                     <button name="submit" type="submit">Bình luận</button>
