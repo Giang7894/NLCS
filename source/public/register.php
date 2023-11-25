@@ -20,6 +20,8 @@
             if($query2 && $password==$passwordrepeat){
                 $query=mysqli_query($connect,$sql1);
                 $row=mysqli_fetch_array($query);
+                $kho="INSERT INTO kho_cong_thuc values('$row[id]',0)";
+                $s=mysqli_query($connect,$kho);
                 session_start();
                 $_SESSION['id']=$row['id'];
                 header('location:profile.php');

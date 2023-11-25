@@ -43,6 +43,12 @@
    
   }
 </style>
-        
+        <script>
+            $(document).ready(function(){
+                $("#search-btn").on('click',function(){
+                    $("#find").trigger("submit");
+                })
+            })
+        </script>
             
 </footer>

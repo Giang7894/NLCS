@@ -28,7 +28,17 @@
     />
   </a>
 
-  
+  <form class="d-none d-md-flex input-group w-auto my-auto" method="get" id="find" action="view.php">
+        <input
+          autocomplete="off"
+          type="search"
+          class="form-control rounded ms-4"
+          placeholder='Search '
+          style="min-width: 225px;"
+          name="search"
+        />
+        <span class="input-group-text rounded border-1 ms-2" id="search-btn"><i class="fas fa-search"></i></span>
+      </form>
 
 
   <ul class="navbar-nav ms-auto d-flex flex-row">
@@ -86,6 +96,9 @@
     main{
       padding-top: 100px;
     }
+    body{
+            background: #f3f3f3;
+        }
 
 #main-navbar{
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);

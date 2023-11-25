@@ -3,7 +3,13 @@
 session_start();
 require_once __DIR__ . '/../db/db_connection.php';
 
-$query="SELECT a.ma_ct,a.ten_ct,a.hinh_anh,ifnull(0,avg(so_sao)) as tb,count(b.id) as tong from cong_thuc as a left outer join danh_gia as b on a.ma_ct=b.ma_ct group by a.ma_ct order by tb desc";
+if(isset($_GET['search'])){
+    $query="SELECT a.ma_ct,a.ten_ct,a.hinh_anh,avg(so_sao) as tb,count(b.id) as tong from cong_thuc as a left outer join danh_gia as b on a.ma_ct=b.ma_ct where a.ten_ct like '%$_GET[search]%' or a.nguyen_lieu like '%$_GET[search]%' group by a.ma_ct order by tb desc";
+}
+else{
+    $query="SELECT a.ma_ct,a.ten_ct,a.hinh_anh,avg(so_sao) as tb,count(b.id) as tong from cong_thuc as a left outer join danh_gia as b on a.ma_ct=b.ma_ct group by a.ma_ct order by tb desc";
+}
+
 $r=mysqli_query($connect,$query);
 $count=mysqli_num_rows($r);
 $sql="SELECT ten_loai from danh_muc";
@@ -44,7 +50,7 @@ $dm=mysqli_query($connect,$sql);
                                 for($m=1;$m<=round($row['tb']);$m++)      
                                 echo'<span><i class="fa-solid fa-star" style="color: #ea8f10;"></i></span>';
                                         
-                                echo'<span class="ms-3">'.$row['tong'].' đánh giá</span></span></div>
+                                echo'</span><span class="mt-1">'.$row['tong'].' đánh giá</span></div>
                                     </div><div class="col-1"></div>';
                             }
                             
