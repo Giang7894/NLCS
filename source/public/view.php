@@ -36,7 +36,7 @@ $dm=mysqli_query($connect,$sql);
             <div class="row">
                 <div class="col-2 mt-5">
                     <?php while($cate=mysqli_fetch_array($dm)){
-                        echo '<div class="d-block category py-1" href="view.php?category='.$cate['ma_loai'].'">'.$cate['ten_loai'].'</div>';
+                        echo '<div class="d-block category py-1 border-bottom" href="view.php?category='.$cate['ma_loai'].'">'.$cate['ten_loai'].'</div>';
                     } ?>
                 </div>
                 <div class="col-1"></div>

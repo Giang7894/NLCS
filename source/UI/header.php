@@ -21,7 +21,7 @@
 
   <a class="navbar-brand ps-5" href="index.php">
     <img
-      src="/../img/logo.jpg"
+      src="/../img/logo_alt.jpg"
       height="50"
       alt="Let me cook Logo"
       loading="lazy"

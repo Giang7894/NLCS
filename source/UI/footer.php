@@ -2,23 +2,23 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="align-items-center col-6">Liên hệ Mahjong Pizza:<i class="fa-brands fa-facebook-f ps-3" style="color: #ffffff;"></i><i class="fa-brands fa-youtube ps-3" style="color: #ffffff;"></i></div>
+            <div class="align-items-center col-6">Liên hệ LET ME COOK: 1900.1616.2727<i class="fa-brands fa-facebook-f ps-3" style="color: #ffffff;"></i><i class="fa-brands fa-youtube ps-3" style="color: #ffffff;"></i></div>
             <div class="nav-group col-6 ">
                 <ul class="nav d-flex justify-content-end" >
-                    <li class="nav-item"><a class="nav-link " href="menu.php">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link " href="about.php">Về chúng tôi</a></li>
-                    <li class="nav-item"><a class="nav-link " href="receipt.php">Giỏ hàng</a></li>
+                    <li class="nav-item"><a class="nav-link " href="view.php">RECIPES</a></li>
+                    <li class="nav-item"><a class="nav-link " href="about.php">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link " href="store.php">YOUR RECIPES</a></li>
                 </ul>
             </div>
         </div>
         <hr></hr>
         <div class="row">
             <div class=" col-6">
-                <p>Cửa hàng Mahjong Pizza</p>
+                <p>LET ME COOK</p>
                 <p>Khu II, Đ. 3 Tháng 2, Xuân Khánh, Ninh Kiều, Cần Thơ</p>
             </div>
             <div class="col-6 d-flex justify-content-end">
-                <img src="img/logo.jpg" id="logof"> 
+                <img src="img/logo_alt.jpg" id="logof" style="width: 100px; height:100px;"> 
             </div>
             
         </div>
