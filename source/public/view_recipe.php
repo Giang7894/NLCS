@@ -53,8 +53,25 @@ if(isset($_POST['submit'])){
                 <div id="step">'.$row['buoc'].'</div></div>';
             ?>
             </div>
-            <div class="col-1"></div>
-            <div class="col-3"></div>
+            <div class="col-3 ms-5 mt-5 z-3" id="news" style="height: 550px;">
+                    <div class="row text-center pt-2"><h2>News</h2></div>
+                    <div class="row my-5 new">
+                        <div class="col-4"><img src="https://i1-dulich.vnecdn.net/2023/06/09/Image-787774701-ExtractWord-3-9100-5554-1686295848.png?w=500&h=300&q=100&dpr=1&fit=crop&s=eSviS4tumPcbwxKykIf4GQ" style="width: 100%; height: 100%;"></div>
+                        <div class="col-8 article"><b>Hơn ba năm đưa Michelin Guide về Việt Nam</b></div>
+                    </div>
+                    <div class="row my-5 new">
+                        <div class="col-4"><img src="https://i1-dulich.vnecdn.net/2023/06/22/inter-1687411393-8206-1687411413.png?w=500&h=300&q=100&dpr=1&fit=crop&s=ESRhhBb_J3aNirTxixxOXA" style="height: 100%;width: 100%;"></div>
+                        <div class="col-8 article"><b>InterContinental Phu Quoc giới thiệu menu mùa hè 5 sao</b></div>
+                    </div>
+                    <div class="row my-5 new">
+                        <div class="col-4"><img src="https://i1-giadinh.vnecdn.net/2023/03/01/nh22-1677655227-3617-1677655410.jpg?w=500&h=300&q=100&dpr=1&fit=crop&s=uVLwLK70E4-2ZctFN45PgQ" style="height: 100%;width: 100%;"></div>
+                        <div class="col-8 article"><b>Luộc gà bằng nước lạnh hay nước sôi?</b></div>
+                    </div>
+                    <div class="row my-5 new">
+                        <div class="col-4"><img src="https://i1-vnexpress.vnecdn.net/2022/12/26/topp-1672040273-4207-1672040296.jpg?w=500&h=300&q=100&dpr=1&fit=crop&s=iNdViZLb1NddaEB9_jcpJg" style="height: 100%;width: 100%;"></div>
+                        <div class="col-8 article"><b>Làng khô cá bổi vào vụ Tết</b></div>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-8">
@@ -157,6 +174,15 @@ if(isset($_POST['submit'])){
         textarea{
             resize: none;
             height: 70px;
+        }
+        #news{
+            background: beige;
+        }
+        .new:hover{
+            cursor: pointer;
+        }
+        .article:hover{
+            text-decoration: underline;
         }
     </style>
     <script>
