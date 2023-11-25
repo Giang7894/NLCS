@@ -6,13 +6,16 @@ require_once __DIR__ . '/../db/db_connection.php';
 if(isset($_GET['search'])){
     $query="SELECT a.ma_ct,a.ten_ct,a.hinh_anh,avg(so_sao) as tb,count(b.id) as tong from cong_thuc as a left outer join danh_gia as b on a.ma_ct=b.ma_ct where a.ten_ct like '%$_GET[search]%' or a.nguyen_lieu like '%$_GET[search]%' group by a.ma_ct order by tb desc";
 }
+elseif(isset($_GET['category'])){
+    $query="SELECT a.ma_ct,a.ten_ct,a.hinh_anh,avg(so_sao) as tb,count(b.id) as tong from cong_thuc as a left outer join danh_gia as b on a.ma_ct=b.ma_ct where a.ma_loai='$_GET[category]' group by a.ma_ct order by tb desc";
+}
 else{
     $query="SELECT a.ma_ct,a.ten_ct,a.hinh_anh,avg(so_sao) as tb,count(b.id) as tong from cong_thuc as a left outer join danh_gia as b on a.ma_ct=b.ma_ct group by a.ma_ct order by tb desc";
 }
 
 $r=mysqli_query($connect,$query);
 $count=mysqli_num_rows($r);
-$sql="SELECT ten_loai from danh_muc";
+$sql="SELECT * from danh_muc";
 $dm=mysqli_query($connect,$sql);
 
 ?>
@@ -31,9 +34,9 @@ $dm=mysqli_query($connect,$sql);
         ?>
         <main class="container">
             <div class="row">
-                <div class="col-2">
+                <div class="col-2 mt-5">
                     <?php while($cate=mysqli_fetch_array($dm)){
-                        echo '<div class="row category">'.$cate['ten_loai'].'</div>';
+                        echo '<div class="d-block category py-1" href="view.php?category='.$cate['ma_loai'].'">'.$cate['ten_loai'].'</div>';
                     } ?>
                 </div>
                 <div class="col-1"></div>
@@ -72,12 +75,27 @@ $dm=mysqli_query($connect,$sql);
         .recipe:hover{
             cursor: pointer;
         }
+        .recipe{
+            background: white;
+        }
+        .category{
+            background: white;
+            padding-left: 20px;
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+        }
+        .category:hover{
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 12%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+            cursor: pointer;
+        }
     </style>
     <script>
         $(document).ready(function(){
             $(".recipe").click(function(evt){
                 location.href=$(this).attr("href");
             
+            })
+            $(".category").click(function(e){
+                location.href=$(this).attr("href");
             })
         })
     </script>

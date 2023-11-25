@@ -108,6 +108,9 @@ $r=mysqli_query($connect,$query);
         .article:hover{
             text-decoration: underline;
         }
+        .recipe{
+            background: white;
+        }
     </style>
 
     <script>
