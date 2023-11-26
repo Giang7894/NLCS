@@ -30,7 +30,7 @@ $count=mysqli_num_rows($r);
                         for($i=1;$i<=4;$i++){
                             $row=mysqli_fetch_array($r);
                             if(!empty($row)){
-                                echo'<div class="col-2 recipe" href="view_recipe.php?id='.$row['ma_ct'].'">
+                                echo'<div class="col-2 recipe mx-5" href="view_recipe.php?id='.$row['ma_ct'].'">
                                         <div class="row my-3"><img src="'.$row['hinh_anh'].'" style="height: 100px;width: 100%;"></div>
                                         <div class="row my-2"><h3 class="link">'.$row['ten_ct'].'</h3></div>
                                         </div>';       

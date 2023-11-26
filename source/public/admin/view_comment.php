@@ -51,9 +51,9 @@
                             <td>'.$username.'</td>
                             <td>'.$recipe.'</td>
                             <td>'.$time.'</td>
-                            <td>'.$cmt.'</td>
-                            <td>'.$stt.'<a type="button" class="btn btn-warning ms-2" href="hide_cmt.php?id='.$id.'&ma_ct='.$recipeid.'&ngay_gio='.$time.'"> Ẩn</a></td>
-                        </tr>';
+                            <td>'.$cmt.'</td>';
+                        if($row['an']==0) echo'<td>'.$stt.'<a type="button" class="btn btn-warning ms-2" href="hide_cmt.php?id='.$id.'&ma_ct='.$recipeid.'&ngay_gio='.$time.'"> Ẩn</a></td>
+                        </tr>';else echo '<td><b>'.$stt.'</b></td></tr>';
                     }}
                     ?>
                 </tbody>
