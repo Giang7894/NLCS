@@ -35,8 +35,9 @@ $dm=mysqli_query($connect,$sql);
         <main class="container">
             <div class="row">
                 <div class="col-2 mt-5">
+                    <div class="cate"><strong>Danh mục</strong></div>
                     <?php while($cate=mysqli_fetch_array($dm)){
-                        echo '<div class="d-block category py-1 border-bottom" href="view.php?category='.$cate['ma_loai'].'">'.$cate['ten_loai'].'</div>';
+                        echo '<div class="d-block category py-1 border-bottom my-1" href="view.php?category='.$cate['ma_loai'].'">'.$cate['ten_loai'].'</div>';
                     } ?>
                 </div>
                 <div class="col-1"></div>
@@ -69,6 +70,9 @@ $dm=mysqli_query($connect,$sql);
 
     </body>
     <style>
+        .cate{
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 12%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+        }
         .recipe:hover{
             box-shadow: 0 2px 5px 0 rgb(0 0 0 / 12%), 0 2px 10px 0 rgb(0 0 0 / 12%);
         }

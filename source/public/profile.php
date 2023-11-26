@@ -22,8 +22,11 @@ if(isset($_POST['submit'])){
       <link href="css/login.css" rel="stylesheet">
     </head>
     <body>
+    <?php
+            require_once __DIR__ . '/../UI/header.php';
+        ?>
         <main>
-        <form action="" method="post" enctype="application/x-www-form-urlencoded" >
+        <form action="" method="post" enctype="application/x-www-form-urlencoded" id="a">
                 <fieldset>
                     <legend>Cập nhật thông tin</legend>
                       <div class="form-floating m-5 mb-3">
@@ -45,6 +48,9 @@ if(isset($_POST['submit'])){
                 </fieldset>
             </form>
         </main>
+        <?php
+            require_once __DIR__ . '/../UI/footer.php';
+        ?>
     </body>
     <script>
         $(document).ready(function(){

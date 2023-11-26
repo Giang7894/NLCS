@@ -15,7 +15,7 @@
         <div class="row">
             <div class=" col-6">
                 <p>LET ME COOK</p>
-                <p>Khu II, Đ. 3 Tháng 2, Xuân Khánh, Ninh Kiều, Cần Thơ</p>
+                <p>Đ. 3 Tháng 2, Xuân Khánh, Ninh Kiều, Cần Thơ</p>
             </div>
             <div class="col-6 d-flex justify-content-end">
                 <img src="img/logo_alt.jpg" id="logof" style="width: 100px; height:100px;"> 

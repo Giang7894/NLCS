@@ -36,8 +36,9 @@
     <?php require_once __DIR__ . '/../framework.php'; ?>
     </head>
     <body>
+    <?php require_once __DIR__ . '/../UI/header.php';?>
         <main>
-        <form action="login.php" method="post" enctype="application/x-www-form-urlencoded" >
+        <form action="login.php" method="post" enctype="application/x-www-form-urlencoded" id="a">
                 <fieldset>
                     <legend>ĐĂNG NHẬP</legend>
                     <div id="login_img" class="text-center">
@@ -65,5 +66,6 @@
                 </fieldset>
             </form>
         </main>
+        <?php require_once __DIR__ . '/../UI/footer.php';?>
     </body>
 </html>

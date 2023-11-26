@@ -93,7 +93,7 @@ if(isset($_POST['submit'])){
                                 <span><i class="fa-regular fa-star" style="color: #ea8f10;"  id="4" onmouseenter="rating(this.id)" onmouseleave="unrating(this.id)" onclick="rate(this.id)"></i></span>
                                 <span><i class="fa-regular fa-star" style="color: #ea8f10;"  id="5" onmouseenter="rating(this.id)" onmouseleave="unrating(this.id)" onclick="rate(this.id)"></i></span>
                             </span>
-                            <?php if(!empty($_SESSION['ratemsg'])) echo '<div class="text-success mt-5">'.$_SESSION['ratemsg'].'<div>'; ?>
+                            <?php if(!empty($_SESSION['ratemsg'])) echo '<div class="text-success mt-5 row">'.$_SESSION['ratemsg'].'</div>'; $_SESSION['ratemsg']=''; ?>
                         </div>
                         <div class="col-3"><a type="button" class="btn btn-primary add" href="add_my_recipe.php?ma_ct=<?php echo $_GET['id'] ?>">Thêm vô kho</a></div>
                     </div>
@@ -119,7 +119,7 @@ if(isset($_POST['submit'])){
             <div class="col-4"></div>
             </div>
             <?php 
-                $query="SELECT a.id,a.ten_tk,b.* FROM tai_khoan as a join binh_luan as b where a.id=b.id";
+                $query="SELECT a.id,a.ten_tk,b.* FROM tai_khoan as a join binh_luan as b where a.id=b.id and b.ma_ct='$_GET[id]'";
                 $stament=mysqli_query($connect,$query);
                 while($row=mysqli_fetch_array($stament)){
                     if($row['an']==1) echo'<div class="cmt col-8 content pe-5 ps-3 py-4 border border-subtle mb-2">
@@ -135,9 +135,9 @@ if(isset($_POST['submit'])){
                         <div class="row ">
                         <div class="col-1"><img src="https://st.nettruyenus.com/Data/SiteImages/anonymous.png"></div>
                         <div class="col-10 border border-black">
-                            <div class="uname">'.$row['ten_tk'].'</div>
+                            <div class="uname row">'.$row['ten_tk'].'</div>
                             <hr>
-                            <div class="pb-3">'.$row['binh_luan'].'</div>
+                            <div class="pb-3 row overflow-auto">'.$row['binh_luan'].'</div>
                         </div>';
                     if(!empty($_SESSION['id'])){
                         if($row['id']==$_SESSION['id'])

@@ -44,20 +44,21 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     </head>
     <body>
+      <?php require_once __DIR__ . '/../UI/header.php';?>
         <main>
-        <form action="register.php" method="post" enctype="application/x-www-form-urlencoded" >
+        <form action="register.php" method="post" enctype="application/x-www-form-urlencoded" id="a">
                 <fieldset>
                     <legend>ĐĂNG KÝ</legend>
                       <div class="form-floating m-5 mb-3">
-                        <input type="text" class="form-control" name="username"  placeholder="abc123" id="floatingInput3">
+                        <input type="text" class="form-control" name="username"  placeholder="abc123" id="floatingInput3" required>
                         <label for="floatingInput3">Tên tài khoản</label>
                       </div>
                       <div class="form-floating mx-5 mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Password" aria-labelledby="passwordHelpBlock" id="floatingPassword">
+                        <input type="password" class="form-control" name="password" placeholder="Password" aria-labelledby="passwordHelpBlock" id="floatingPassword" required>
                         <label for="floatingPassword">Mật khẩu</label>
                       </div>
                       <div class="form-floating mx-5 mb-3">
-                        <input type="password" class="form-control" name="passwordrepeat" placeholder="Password" aria-labelledby="passwordHelpBlock" id="floatingPassword2">
+                        <input type="password" class="form-control" name="passwordrepeat" placeholder="Password" aria-labelledby="passwordHelpBlock" id="floatingPassword2" required>
                         <label for="floatingPassword2">Nhập lại mật khẩu</label>
                       </div>
                       <div class="form-floating m-5">
@@ -74,5 +75,6 @@
                 </fieldset>
             </form>
         </main>
+        <?php require_once __DIR__ . '/../UI/footer.php';?>
     </body>
 </html>
