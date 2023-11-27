@@ -50,11 +50,11 @@
                 <fieldset>
                     <legend>ĐĂNG KÝ</legend>
                       <div class="form-floating m-5 mb-3">
-                        <input type="text" class="form-control" name="username"  placeholder="abc123" id="floatingInput3" required>
+                        <input type="text" class="form-control" name="username"  placeholder="abc123" id="floatingInput3" required minlength="5" maxlength="50">
                         <label for="floatingInput3">Tên tài khoản</label>
                       </div>
                       <div class="form-floating mx-5 mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Password" aria-labelledby="passwordHelpBlock" id="floatingPassword" required>
+                        <input type="password" class="form-control" name="password" placeholder="Password" aria-labelledby="passwordHelpBlock" id="floatingPassword" required minlength="6" maxlength="12">
                         <label for="floatingPassword">Mật khẩu</label>
                       </div>
                       <div class="form-floating mx-5 mb-3">
