@@ -27,7 +27,7 @@
                 header('location:profile.php');
             }
             else{
-                echo'Mật khẩu không khớp';
+                $error='Mật khẩu không khớp';
             }
         }
     }
