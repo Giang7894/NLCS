@@ -102,7 +102,7 @@ if(isset($_POST['submit'])){
             
 
            <div class="row">
-            <div class="col-8 content mt-5 mb-4 px-5 ">
+            <div class="col-8 content mt-5 mb-4 px-5 cmt">
             <h1 class="mb-3">BÌNH LUẬN</h1>
             <form method="post">
                 <div class="row">
