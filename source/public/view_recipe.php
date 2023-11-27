@@ -73,9 +73,9 @@ if(isset($_POST['submit'])){
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row rate">
                 <div class="col-8">
-                    <div class="row content my-5 px-5 pb-5 border border-dark">
+                    <div class="row content my-5 px-5 pb-5 border border-dark ">
                         <div class="col-4">
 
                                 <h2>Đánh giá</h2>
@@ -102,7 +102,7 @@ if(isset($_POST['submit'])){
             
 
            <div class="row">
-            <div class="col-8 content mt-5 mb-4 px-5 cmt">
+            <div class="col-8 content mt-5 mb-4 px-5">
             <h1 class="mb-3">BÌNH LUẬN</h1>
             <form method="post">
                 <div class="row">
@@ -188,6 +188,7 @@ if(isset($_POST['submit'])){
     <script>
         $(document).ready(function(){
             <?php if(!empty($focus) || !empty($_SESSION['focus'])) {echo '$("html, body").scrollTop($(".cmt").offset().top);'; $_SESSION['focus']='';}?>
+            <?php if(!empty($_SESSION['focusrate'])) {echo '$("html, body").scrollTop($(".rate").offset().top);'; $_SESSION['focusrate']='';}?>
         })
         function rating(e){
             for(let i=1;i<=e;i++){

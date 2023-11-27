@@ -12,7 +12,7 @@ if(isset($_GET['ma_ct']) && isset($_GET['danh_gia'])){
     $query="INSERT INTO danh_gia values('$_GET[ma_ct]','$_SESSION[id]','$_GET[danh_gia]')";
     mysqli_query($connect,$query);
     $_SESSION['ratemsg']="Cảm ơn bạn đã thực hiện đánh giá";
-    $_SESSION['focus']=1;
+    $_SESSION['focusrate']=1;
     header('location:view_recipe.php?id='.$_GET['ma_ct'].'');
 }
 
